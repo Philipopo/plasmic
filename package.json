@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@plasmicapp/auth-api": "^0.0.14",
+    "@plasmicapp/cli": "^0.1.329",
     "@plasmicapp/loader-nextjs": "^1.0.295",
+    "@plasmicapp/react-web": "^0.2.335",
     "@supabase/auth-helpers-nextjs": "^0.7.2",
     "@supabase/auth-helpers-react": "^0.4.0",
     "@supabase/supabase-js": "^2.26.0",

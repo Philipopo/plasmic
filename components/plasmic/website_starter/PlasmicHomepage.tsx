@@ -59,6 +59,8 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
+
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic.module.css"; // plasmic-import: fhC1PcmXtYuFCXeGvPKYae/projectcss
@@ -155,7 +157,21 @@ function PlasmicHomepage__RenderFunc(props: {
                 sty.h1
               )}
             >
-              {"this is called testing!!"}
+              <React.Fragment>
+                {(() => {
+                  try {
+                    return currentUser.email;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return "this is called testing!!";
+                    }
+                    throw e;
+                  }
+                })()}
+              </React.Fragment>
             </h1>
             <div
               data-plasmic-name={"text"}
